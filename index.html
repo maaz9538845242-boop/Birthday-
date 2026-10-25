@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Asha ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,serif;color:#513a43;background:linear-gradient(145deg,#fff8f1,#fff0f6,#f5f0ff);min-height:100vh}
+.screen{display:none;min-height:100vh;padding:25px 18px;align-items:center;justify-content:center}
+.screen.active{display:flex;animation:fade .6s ease}
+.wrap{width:min(100%,700px);margin:auto;text-align:center}
+.card{background:#ffffffd9;border:1px solid #f1d5df;border-radius:28px;padding:clamp(22px,5vw,42px);box-shadow:0 18px 60px #a44d6d18}
+h1{font-size:clamp(2.6rem,10vw,5rem);color:#9d3c64;line-height:1.05}
+h2{font-size:clamp(1.8rem,7vw,3rem);color:#9d3c64}
+p{line-height:1.75}
+.lead{font-size:1.2rem}
+.small{font:14px/1.6 Arial,sans-serif;color:#8a6a77}
+.btnrow{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:nowrap;width:100%;margin:24px auto 0}
+button{font:inherit;cursor:pointer;touch-action:manipulation}
+.btn{border:0;border-radius:999px;padding:14px 20px;min-width:0;max-width:100%;box-shadow:0 8px 20px #a64a6d22;transition:transform .2s}
+.primary{background:#e879a0;color:white}
+.soft{background:white;color:#9d3c64;border:1px solid #edcada}
+#noBtn{position:relative;white-space:nowrap}
+#noMessage{min-height:30px;color:#a54d72;font:600 14px Arial,sans-serif;margin-top:14px}
+.balloon-area{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:460px;margin:25px auto}
+.balloon{background:transparent;border:0;display:flex;flex-direction:column;align-items:center;gap:12px;color:#9d3c64}
+.bubble{width:clamp(95px,27vw,130px);height:clamp(120px,34vw,160px);border-radius:50%;display:grid;place-items:center;color:white;font-size:2rem;position:relative;box-shadow:inset -12px -12px 20px #0001,inset 10px 8px 20px #fff5;transition:transform .2s}
+.bubble:after{content:"";position:absolute;top:98%;left:50%;height:55px;border-left:2px solid #bca6ad}
+.balloon:nth-child(1) .bubble{background:#e982a5}
+.balloon:nth-child(2) .bubble{background:#9b8be0}
+.balloon:nth-child(3) .bubble{background:#f2b66f}
+.balloon:nth-child(4) .bubble{background:#7fc9c1}
+.balloon:active .bubble{transform:scale(1.08)}
+.balloon.popped .bubble{animation:pop .35s forwards}
+.balloon.popped .bubble:after{display:none}
+.balloon-label{font:600 14px Arial,sans-serif}
+.message{min-height:100px;text-align:left;line-height:1.8;padding:20px;background:#fff9;border:1px solid #f0d8e0;border-radius:18px;margin:18px auto;max-width:560px}
+.progress{font:12px Arial,sans-serif;letter-spacing:2px;color:#a66a80;margin-bottom:15px}
+button:disabled{opacity:.5}
+.letter-card{max-width:700px;text-align:left;background:#fffdf9;border:1px solid #ead7c8;padding:clamp(22px,5vw,45px);box-shadow:0 18px 55px #79584916}
+.letter-card h2{text-align:center;font-size:2rem}
+.letter-subtitle{text-align:center;font-style:italic;color:#a27b78}
+.letter-content{font-size:1rem;line-height:1.9}
+.letter-content p{margin-bottom:1.1em}
+.cake{position:relative;width:270px;max-width:85vw;height:220px;margin:25px auto}
+.plate{position:absolute;bottom:10px;left:0;right:0;height:20px;background:#e7d5d7;border-radius:50%}
+.cake-bottom{position:absolute;bottom:28px;left:15%;width:70%;height:75px;border-radius:10px 10px 18px 18px;background:linear-gradient(#f7a9bc 20%,#fff0df 20% 36%,#e98eaa 36%)}
+.cake-top{position:absolute;bottom:90px;left:15%;width:70%;height:30px;border-radius:50%;background:#fff2e8;border:3px solid #f3d2d6}
+.icing{position:absolute;bottom:66px;left:17%;width:66%;height:20px;background:#fff2e8;border-radius:12px}
+.candle{position:absolute;bottom:116px;left:calc(50% - 5px);height:54px;width:10px;background:repeating-linear-gradient(45deg,#fff 0 7px,#e77fa0 7px 13px);z-index:3}
+.flame{position:absolute;bottom:166px;left:calc(50% - 10px);width:20px;height:29px;border-radius:55%;background:radial-gradient(#fff9b6 20%,#ffbf55 55%,#ff805c);filter:drop-shadow(0 0 12px #ffb451);animation:flicker .7s infinite alternate;z-index:4}
+.flame.out{display:none}
+.confetti{position:fixed;top:-15px;width:9px;height:15px;z-index:20;animation:fall var(--dur) linear forwards;left:var(--left);background:var(--color);pointer-events:none}
+.heart{position:fixed;bottom:-25px;opacity:.4;pointer-events:none;animation:float 10s linear infinite}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pop{to{transform:scale(.1);opacity:0}}
+@keyframes flicker{to{transform:rotate(5deg) scale(1.05)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+@keyframes float{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@media(max-width:390px){.btnrow{gap:9px}.btn{padding:13px 15px;font-size:14px}.letter-content{font-size:.96rem}}
+</style>
+</head>
+<body>
+<section class="screen active" id="welcome">
+<div class="wrap card">
+<div style="font-size:2.5rem">🎀 ✨ 💌</div>
+<p class="small">A LITTLE SURPRISE, JUST FOR YOU</p>
+<h1>ASHAAA!</h1>
+<p class="lead">Are you ready for your birthday wishes? 💗</p>
+<div class="btnrow" id="buttonRow">
+<button class="btn primary" id="yesBtn">YES 💖</button>
+<button class="btn soft" id="noBtn">NO 🙈</button>
+</div>
+<div id="noMessage"></div>
+<p class="small">P.S. Choose wisely, birthday girl. ♡</p>
+</div>
+</section>
+
+<section class="screen" id="sure">
+<div class="wrap card">
+<div style="font-size:3rem">🥹💗</div>
+<p class="small">WAIT A SECOND...</p>
+<h2>Are you sure, Asha?</h2>
+<p class="lead">Because this little surprise was made especially for you.</p>
+<div class="btnrow">
+<button class="btn primary" id="sureYes">YES, I'M SURE 💕</button>
+<button class="btn soft" id="sureNo">LET ME THINK 🙃</button>
+</div>
+<p id="sureMessage" class="small"></p>
+</div>
+</section>
+
+<section class="screen" id="balloons">
+<div class="wrap">
+<p class="small">A FEW THINGS YOU DESERVE TO HEAR</p>
+<h2>Four little reminders for you 🎈</h2>
+<p class="lead">Tap each balloon to reveal a message. These are for you.</p>
+<div class="balloon-area">
+<button class="balloon"><span class="bubble">♡</span><span class="balloon-label">Your strength</span></button>
+<button class="balloon"><span class="bubble">✦</span><span class="balloon-label">Your growth</span></button>
+<button class="balloon"><span class="bubble">★</span><span class="balloon-label">Your wins</span></button>
+<button class="balloon"><span class="bubble">☾</span><span class="balloon-label">Your future</span></button>
+</div>
+<div class="message" id="balloonMessage">Your first little reminder is waiting above. 💗</div>
+<div class="progress" id="balloonProgress">0 OF 4 OPENED</div>
+<button class="btn primary" id="toLetter" disabled>Read your letter 💌</button>
+</div>
+</section>
+
+<section class="screen" id="letter">
+<div class="wrap">
+<div class="letter-card">
+<div style="text-align:center;font-size:2rem">💌</div>
+<h2>Happy Birthday, you. ❤️</h2>
+<div class="letter-subtitle">A letter for Asha</div>
+<div class="letter-content" id="letterContent"></div>
+<div style="text-align:center;margin-top:25px">
+<p style="font-style:italic;color:#a27b78">Take a breath. There's one last little thing. ♡</p>
+<button class="btn primary" id="toCake">One last surprise 🎂</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="screen" id="cakeScreen">
+<div class="wrap card">
+<p class="small">MAKE A WISH</p>
+<h2>One candle. One beautiful wish. 🕯️</h2>
+<p class="lead">Close your eyes, think of something your heart truly wants, and blow out your candle.</p>
+<div class="cake">
+<div class="plate"></div><div class="cake-bottom"></div><div class="icing"></div><div class="cake-top"></div>
+<div class="candle"></div><div class="flame" id="flame"></div>
+</div>
+<p class="small" id="micStatus">Allow microphone access to try blowing, or use the backup button below.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<button class="btn primary" id="micBtn">Enable blowing detection 🎤</button>
+<button class="btn soft" id="blowBtn">I blew the candle! ✨</button>
+</div>
+</div>
+</section>
+
+<section class="screen" id="final">
+<div class="wrap card">
+<div style="font-size:3.5rem">🎂 🎉 💗</div>
+<p class="small">TODAY, AND ALL THE DAYS AFTER</p>
+<h1 style="font-size:clamp(2.5rem,9vw,4.5rem)">Happy Birthday,<br>Asha! ❤️</h1>
+<p class="lead">May all your wishes come true. May life surprise you with beautiful places, kind people, peaceful days, big achievements, and little moments that make you smile for no reason. May you always find reasons to believe in yourself and feel proud of the person you're becoming.</p>
+<p class="lead" style="color:#9d3c64;font-style:italic">Keep smiling, keep exploring, and keep finding magic in ordinary places. You deserve so much happiness. ✨</p>
+<p style="font-size:1.3rem">Always take care of yourself. ❤️</p>
+<p class="small">Made especially for you, Asha ♡</p>
+</div>
+</section>
+
+<script>
+const screens=[...document.querySelectorAll('.screen')];
+function showScreen(id){
+screens.forEach(s=>s.classList.toggle('active',s.id===id));
+window.scrollTo({top:0,behavior:'smooth'});
+}
+const noBtn=document.getElementById('noBtn');
+const noMessage=document.getElementById('noMessage');
+const noLines=["Nice try 😂","Nope, not letting you go!","Try YES, birthday girl! 🎀","That button has other plans 🙈","Asha, we both know you're curious 💗","Almost got me! Try again 😌","The NO button said: not today 😂"];
+let noCount=0;
+function moveNo(){
+noMessage.textContent=noLines[noCount%noLines.length];
+noCount++;
+noBtn.style.transform=`translate(${(noCount%2===0?-1:1)*(12+(noCount%3)*7)}px,${(noCount%2===0?1:-1)*8}px) rotate(${(noCount%2===0?-1:1)*6}deg)`;
+}
+noBtn.addEventListener('pointerenter',moveNo);
+noBtn.addEventListener('click',moveNo);
+noBtn.addEventListener('touchstart',e=>{e.preventDefault();moveNo()},{passive:false});
+document.getElementById('yesBtn').onclick=()=>showScreen('sure');
+document.getElementById('sureYes').onclick=()=>showScreen('balloons');
+document.getElementById('sureNo').onclick=()=>{
+document.getElementById('sureMessage').textContent="Take your time… but the surprise isn't going anywhere. 😌💗";
+document.getElementById('sureNo').textContent="OK, I'M READY 😂";
+document.getElementById('sureNo').onclick=()=>showScreen('balloons');
+};
+
+const messages=[
+"You have a kind of strength that isn't always loud. Sometimes it's simply getting through a difficult day, trying again, and carrying on even when nobody knows how much effort it took. I hope you give yourself credit for that, too. ❤️",
+"You're allowed to grow at your own pace. You don't have to have everything figured out to be moving forward. Every lesson, every change, and every brave little step is shaping you into someone new—and that's worth celebrating. 🌷",
+"Every achievement matters: the big milestones, the goals you're quietly working toward, and the small wins only you know about. I hope you pause to notice how far you've come and feel proud of the effort you've put in. You deserve to celebrate yourself. ✨",
+"I hope the year ahead brings you new places to explore, dreams that feel closer, people who genuinely value you, and happiness in the most ordinary moments. May life be gentle with you—and may you always remember that beautiful things are still waiting for you. 🌙"
+];
+const balloons=[...document.querySelectorAll('.balloon')];
+const opened=new Set();
+balloons.forEach((b,i)=>b.onclick=()=>{
+if(opened.has(i))return;
+opened.add(i);b.classList.add('popped');b.disabled=true;
+document.getElementById('balloonMessage').textContent=messages[i];
+document.getElementById('balloonProgress').textContent=`${opened.size} OF 4 OPENED`;
+if(opened.size===4){
+document.getElementById('toLetter').disabled=false;
+document.getElementById('toLetter').textContent="All four opened — read your letter 💌";
+}
+});
+document.getElementById('toLetter').onclick=()=>showScreen('letter');
+document.getElementById('toCake').onclick=()=>showScreen('cakeScreen');
+
+const letter=`Happy Birthday, you. ❤️
+
+I have been thinking about what to write to you today, and honestly, I don’t think any words will ever be enough to explain everything I still feel when it comes to you.
+
+How do I wish someone a happy birthday when a part of me still wishes I could be there to celebrate it with her? How do I write a simple birthday message to someone who was once such a big part of my everyday life, someone who knew my moods, my silences, my stupid jokes, my anger, my happiness, and all the little things about me that I never had to explain?
+
+Three years. Sometimes I still wonder how two people can share so much of their lives and eventually become strangers who have to think twice before even saying hello.
+
+We didn’t just spend three years together. We lived so many little lives within those three years.
+
+We laughed until our stomachs hurt. We cried over things that felt like the end of the world. We got angry, fought, got upset over the smallest things, and somehow still found reasons to laugh again. We danced on rooftops, slept under the open sky, watched the stars, talked about everything and nothing, celebrated each other, went out, hunted for restaurants, travelled, explored places, and made memories out of days that probably looked ordinary to everyone else.
+
+And the rooftops… I don’t know if you will ever understand how much those nights meant to me. There was something so beautiful about lying there, looking at the stars, with no idea that one day those memories would become something I’d have to revisit in your absence.
+
+Back then, we didn’t know we were making memories we’d someday miss.
+
+We were just happy being there. Being us.
+
+And I think that’s what hurts the most. I don’t only miss the big moments or the special days. I miss the little things. The comfort of having you around. The random conversations. The laughter that came out of nowhere. The silly arguments. The excitement of doing something together. The feeling that no matter how the day went, there was someone who had become such a familiar part of my world.
+
+Somewhere along the way, you became part of so many things I never thought I’d have to learn to experience without you.
+
+I know our story didn’t end the way either of us might once have imagined. Things happened, life took us in different directions, and the ending left behind feelings that aren’t easy to put into words. There are things I wish had gone differently, moments I wish we had handled better, and conversations that perhaps never got the ending they deserved.
+
+But even with all the hurt, I can’t look back at those three years and call them a mistake.
+
+Never.
+
+Because whatever happened at the end doesn’t erase the happiness that existed before it. It doesn’t erase the person you were to me, the memories we made, or the way we once made each other’s lives a little more beautiful.
+
+And today, on your birthday, I don’t want the painful ending to be the loudest thing I remember about us.
+
+I want to remember the girl who laughed with me on rooftops. The girl who watched the same stars as I did. The girl with whom an ordinary outing could become an entire adventure. The girl whose happiness mattered to me, whose achievements made me proud, and whose smallest joys could make my day better.
+
+I hope life is kind to that girl. I hope it gives her reasons to laugh the way she used to. I hope she finds happiness in the smallest things, discovers beautiful places, achieves the things she once dreamed of, and never loses the little things that make her who she is.
+
+I hope the people around you appreciate your heart. I hope you feel loved, understood, respected, and safe. I hope you have people who celebrate your victories, hold your hand through your difficult days, and remind you of your worth when life gets heavy.
+
+And I hope that when you look back at your life, you find more reasons to smile than to cry.
+
+I won’t pretend that I don’t miss you. I do. And some memories still find their way to me when I least expect them. Sometimes it’s a place, sometimes a random thought, sometimes just the memory of how we used to be. And for a moment, it feels strange that something that once felt so close belongs to a different chapter of my life now.
+
+I miss you, but I also understand that life is different now. I know you have your own life, your own responsibilities, and your own path to walk. I respect that, and I would never want a birthday wish from me to become a burden on your happiness.
+
+Maybe some people leave our everyday lives but never become ordinary memories. Maybe some bonds don’t get the ending we hoped for, yet remain a meaningful part of who we became.
+
+You will always be someone I shared a very special chapter of my life with. And no matter how much time passes, I will always be grateful that, for three years, our paths crossed in the way they did.
+
+If I could go back to one of those rooftop nights, knowing everything I know today, I think I’d spend a little less time worrying about tomorrow. I’d laugh a little longer, look at the stars a little more, and appreciate the fact that you were right there beside me.
+
+Not because I’d try to change the ending, but because I’d want to appreciate the beautiful part while I was still living it.
+
+And maybe that’s what growing up teaches us. That some moments are precious precisely because we don’t know how much they will mean to us later.
+
+So, today, I just want to wish you a birthday filled with the kind of happiness that stays long after the candles are blown out. I hope this new year of your life brings you peace, good health, beautiful surprises, success in everything you work for, and countless little reasons to feel grateful for being alive.
+
+Keep smiling. Keep exploring. Keep finding magic in ordinary places. Keep being proud of yourself. And please, never stop celebrating the person you are and the person you are becoming.
+
+Happy birthday to someone who was once my favourite person to share an ordinary day with, and who gave me three years of memories I will always carry with me.
+
+Happy birthday. Take care of yourself, always. ❤️`;
+
+function escapeHTML(s){
+return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+document.getElementById('letterContent').innerHTML=letter.split(/\n\s*\n/).map(p=>`<p>${escapeHTML(p)}</p>`).join('');
+
+const flame=document.getElementById('flame');
+let audioContext=null,analyser=null,micStream=null,micLoop=null;
+document.getElementById('micBtn').onclick=async()=>{
+const status=document.getElementById('micStatus');
+try{
+if(!navigator.mediaDevices?.getUserMedia)throw new Error('Unavailable');
+micStream=await navigator.mediaDevices.getUserMedia({audio:true});
+audioContext=new(window.AudioContext||window.webkitAudioContext)();
+const source=audioContext.createMediaStreamSource(micStream);
+analyser=audioContext.createAnalyser();analyser.fftSize=1024;source.connect(analyser);
+const data=new Uint8Array(analyser.fftSize);
+status.textContent="Listening… blow gently toward your phone's microphone.";
+function listen(){
+if(!analyser||flame.classList.contains('out'))return;
+analyser.getByteTimeDomainData(data);
+let sum=0;
+for(let i=0;i<data.length;i++){const v=(data[i]-128)/128;sum+=v*v;}
+if(Math.sqrt(sum/data.length)>.19){extinguish();return;}
+micLoop=requestAnimationFrame(listen);
+}
+listen();
+document.getElementById('micBtn').textContent="Microphone enabled ✓";
+}catch(e){status.textContent="Microphone couldn't start. Use the button to finish the surprise.";}
+};
+document.getElementById('blowBtn').onclick=extinguish;
+function extinguish(){
+if(flame.classList.contains('out'))return;
+flame.classList.add('out');
+document.getElementById('micStatus').textContent="Your wish is on its way. ✨";
+if(micLoop)cancelAnimationFrame(micLoop);
+if(micStream)micStream.getTracks().forEach(t=>t.stop());
+if(audioContext)audioContext.close().catch(()=>{});
+setTimeout(()=>{showScreen('final');confetti(100);},1000);
+}
+function confetti(count){
+const colors=['#e879a0','#b9a5e8','#f2b66f','#7fc9c1','#f8d7df','#fff'];
+for(let i=0;i<count;i++){
+const el=document.createElement('i');el.className='confetti';
+el.style.setProperty('--left',Math.random()*100+'vw');
+el.style.setProperty('--color',colors[Math.floor(Math.random()*colors.length)]);
+el.style.setProperty('--dur',(3+Math.random()*4)+'s');
+el.style.animationDelay=Math.random()*1.4+'s';
+document.body.appendChild(el);setTimeout(()=>el.remove(),8500);
+}
+}
+for(let i=0;i<12;i++){
+const h=document.createElement('span');h.className='heart';
+h.textContent=['♡','✦','♥'][i%3];
+h.style.left=Math.random()*100+'%';
+h.style.animationDelay=Math.random()*9+'s';
+h.style.fontSize=(12+Math.random()*18)+'px';
+document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
